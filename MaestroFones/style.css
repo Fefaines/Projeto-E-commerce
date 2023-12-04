@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#filtros {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.filtro {
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+.filtro label {
+  padding: 5px 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Estilo quando o input está marcado (:checked) */
+.filtro input:checked + label {
+  background-color: black;
+  color: #fff;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#container-produto {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.card {
+  width: 23rem;
+  padding: 10px;
+  border: 4px solid #167c63;
+  cursor: pointer;
+}
+
+.product-img {
+  border-radius: 10px;
+}
+
+header {
+  background-color: black;
+  margin-bottom: 30px;
+  padding: 15px 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-maestro {
+  width: 150px;
+  cursor: pointer;
+}
+
+.btn-navbar {
+  background-color: transparent;
+  color: #167c63;
+  cursor: pointer;
+  width: 7rem;
+  height: 4rem;
+}
+
+.nav-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.carrinho {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Inicia fora da tela na direita */
+  width: 400px;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 11px;
+  border-right: 3px solid #167c63; /* Mudar para border-right */
+  justify-content: space-between;
+  z-index: 2; /* Para sobrepor o que estiver em baixo */
+  border: 3px solid #167c63;
+  transition: right 1s;
+}
+
+.cart-open {
+  right: 0; /* Mostra o carrinho deslocando para a posição visível */
+  transition: right 1s; /* Adicione a transição para o estado aberto */
+}
+
+#close-cart {
+  width: 30px;
+  height: 30px;
+  right: 0;
+  position: absolute;
+  top: 0;
+  margin: 10px 6px;
+}
+
+#cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#close-cart {
+  cursor: pointer;
+}
+
+#container-produto {
+  padding: 50px;
+}
+
+.cart-content {
+  display: flex;
+  background-color: rgb(23, 100, 168);
+  border-radius: 0.5rem;
+  padding: 10px;
+  position: relative;
+  justify-content: center;
+}
+
+.CartProduct-img {
+  width: 12rem;
+  height: 10rem;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.cart-item {
+  display: flex;
+  background-color: rgb(231, 230, 229);
+  border-radius: 12px;
+  align-items: center;
+  position: relative;
+  margin: 30px 5px;
+}
+
+.product-description {
+  margin-left: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.remove-product:hover {
+  color: #be2e14;
+}
+
+.addCartBtn {
+  background-color: #167c63;
+  color: rgb(229, 233, 238);
+  border: none;
+}
+
+.addCartBtn:hover {
+  background-color: #1c9b7b;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  transition-duration: 0.6s;
+}
+
+.close-product {
+  color: black;
+  position: absolute; /* o elemento pai precisa ser relative */
+  top: 0; /* o elemento pai precisa ser relative */
+  right: 0;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+.close-product:hover {
+  color: #be2e14;
+}
+
+.product-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  margin-bottom: 12px;
+}
+
+#total-price {
+  background-color: rgb(231, 230, 229);
+  color: #017558;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+#finalizarCompra {
+  height: 3rem;
+  border-radius: 10px;
+}
+
+#form-checkout {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 50px;
+  gap: 20px;
+}
+
+.dados {
+  width: 33%;
+  padding: 40px 100px;
+  background-color: #012a31;
+  color: white;
+  min-height: 70vh;
+  border-radius: 10px;
+}
+
+.form {
+  margin-top: 30px;
+}
+
+.pagamento {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#container-produtos-checkout {
+  height: 3/4;
+  overflow-y: auto;
+  background-color: #be2e14;
+}
+
+@media (max-width: 1168px) {
+  .card {
+    width: 16rem;
+  }
+  .product-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 668px) {
+  .card {
+    width: 50%;
+  }
+  .product-img {
+    width: 100%;
+    height: auto;
+  }
+}
